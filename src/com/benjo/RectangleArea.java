@@ -1,6 +1,6 @@
 package com.benjo;
 
-public class RectangleArea extends SquareArea{
+public class RectangleArea extends SquareArea implements StraightShape{
     protected double width;
 
     public void setWidth(double wideLength){

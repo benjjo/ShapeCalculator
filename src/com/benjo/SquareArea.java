@@ -1,6 +1,6 @@
 package com.benjo;
 
-public class SquareArea {
+public class SquareArea implements StraightShape{
     protected int length;
 
     public void setLength(int sideLength){
