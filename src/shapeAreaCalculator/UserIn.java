@@ -3,18 +3,9 @@ import java.util.Scanner;
 
 public class UserIn {
     private final Scanner userInput;
-    private String userStringInput;
 
     public UserIn(){
         userInput = new Scanner(System.in);
-    }
-
-    public void setUserStringInput(Scanner scannerIn){
-        this.userStringInput = String.valueOf(scannerIn);
-    }
-
-    public String getUserStringInput(){
-        return this.userStringInput;
     }
 
     public int getSelectionFromUser() {
