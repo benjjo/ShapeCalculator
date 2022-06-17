@@ -1,4 +1,4 @@
-package com.benjo;
+package shapeAreaCalculator;
 
 
 public class Main {
@@ -29,7 +29,6 @@ public class Main {
     public static void main(String[] args) {
         Main mainCall = new Main();
         mainCall.shapeCalculator.setShapeType(mainCall.getShapeTypeFromUser.getShapeType());
-        // How would you handle this in the case that someone entered a selection # outside the range?
         mainCall.setShapeArea(mainCall.shapeCalculator.calculateAreaFromShapeType());
         System.out.println("The area of your " + mainCall.getShapeType() + " is: " + mainCall.getShapeArea());
     }

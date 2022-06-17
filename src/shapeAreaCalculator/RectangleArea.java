@@ -1,4 +1,4 @@
-package com.benjo;
+package shapeAreaCalculator;
 
 public class RectangleArea extends SquareArea implements StraightShape{
     protected double width;

@@ -1,4 +1,4 @@
-package com.benjo;
+package shapeAreaCalculator;
 import java.util.Scanner;
 
 public class UserIn {
@@ -17,37 +17,32 @@ public class UserIn {
         return this.userStringInput;
     }
 
-    public int getShapeIDFromUser() {
+    public int getSelectionFromUser() {
         System.out.print("> ");
         try{return Integer.parseInt(this.userInput.nextLine());}
         catch (NumberFormatException e) {
-            System.out.println("Please enter a number. Aborting.");
-            System.exit(-1);
+            // We're trading one exception for another here. Thoughts?
+            throw new IllegalArgumentException("Please enter a number.");
         }
-        return -1; // Will we ever get here?
     }
 
     public int getSquareEdgeFromUser(){
         System.out.println("You've selected a square, what is the length of the edge?");
-        System.out.print("> ");
-        return Integer.parseInt(userInput.nextLine());
+        return this.getSelectionFromUser();
     }
 
     public double getRectangleLengthFromUser(){
         System.out.println("What is the length of your rectangle?");
-        System.out.print("> ");
-        return Integer.parseInt(userInput.nextLine());
+        return this.getSelectionFromUser();
     }
 
     public double getRectangleWidthFromUser(){
         System.out.println("What is the width of your rectangle?");
-        System.out.print("> ");
-        return Integer.parseInt(userInput.nextLine());
+        return this.getSelectionFromUser();
     }
 
     public double getRadiusFromUser(){
         System.out.println("What is the radius of your circle?");
-        System.out.print("> ");
-        return Integer.parseInt(userInput.nextLine());
+        return this.getSelectionFromUser();
     }
 }

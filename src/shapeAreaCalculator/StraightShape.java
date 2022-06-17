@@ -1,4 +1,4 @@
-package com.benjo;
+package shapeAreaCalculator;
 
 public interface StraightShape {
     void setLength(int Length);

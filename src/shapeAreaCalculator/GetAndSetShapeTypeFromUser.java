@@ -1,4 +1,4 @@
-package com.benjo;
+package shapeAreaCalculator;
 
 
 public class GetAndSetShapeTypeFromUser {
@@ -11,12 +11,16 @@ public class GetAndSetShapeTypeFromUser {
     }
 
     public void setShapeTypeFromUser() {
-        this.setShapeID(userInput.getShapeIDFromUser());
+        this.setShapeID(userInput.getSelectionFromUser());
         this.setShapeType(this.convertMenuItemToString(this.shapeID));
     }
 
     public void setShapeID(int shapeID){
         this.shapeID = shapeID;
+    }
+
+    public int getShapeID(){
+        return this.shapeID;
     }
 
     public void setShapeType(String shape){
@@ -28,7 +32,7 @@ public class GetAndSetShapeTypeFromUser {
             case 1 -> "Square";
             case 2 -> "Rectangle";
             case 3 -> "Circle";
-            default -> "Null";
+            default -> throw new IllegalStateException("Unexpected value: " + shapeID);
         };
     }
 
@@ -44,6 +48,6 @@ public class GetAndSetShapeTypeFromUser {
 
     public void getInformationFromUser(){
         this.printOutTheOptions();
-        setShapeTypeFromUser();
+        this.setShapeTypeFromUser();
     }
 }

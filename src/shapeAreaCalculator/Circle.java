@@ -1,4 +1,4 @@
-package com.benjo;
+package shapeAreaCalculator;
 
 public class Circle {
     private double rad;

@@ -1,4 +1,4 @@
-package com.benjo;
+package shapeAreaCalculator;
 
 public class SquareArea implements StraightShape{
     protected int length;
