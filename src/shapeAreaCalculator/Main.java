@@ -2,34 +2,23 @@ package shapeAreaCalculator;
 
 
 public class Main {
-    private double shapeArea;
     GetAndSetShapeTypeFromUser getShapeTypeFromUser;
-    private final String shapeType;
     CalculateArea shapeCalculator;
+    UserIn userInput;
+    Menu menu;
+    PrintAreaToScreen printArea;
 
     public Main() {
-        getShapeTypeFromUser = new GetAndSetShapeTypeFromUser();
-        getShapeTypeFromUser.getInformationFromUser();
-        this.shapeType = getShapeTypeFromUser.getShapeType();
-        shapeCalculator = new CalculateArea();
-    }
-
-    public double getShapeArea(){
-        return this.shapeArea;
-    }
-
-    public void setShapeArea(double area){
-        this.shapeArea = area;
-    }
-
-    private String getShapeType() {
-        return this.shapeType;
+        this.userInput = new UserIn();
+        this.shapeCalculator = new CalculateArea(this.userInput);
+        this.printArea = new PrintAreaToScreen(shapeCalculator);
+        this.menu = new Menu();
+        this.getShapeTypeFromUser = new GetAndSetShapeTypeFromUser(this.userInput, this.menu);
     }
 
     public static void main(String[] args) {
-        Main mainCall = new Main();
-        mainCall.shapeCalculator.setShapeType(mainCall.getShapeTypeFromUser.getShapeType());
-        mainCall.setShapeArea(mainCall.shapeCalculator.calculateAreaFromShapeType());
-        System.out.println("The area of your " + mainCall.getShapeType() + " is: " + mainCall.getShapeArea());
+        Main main = new Main();
+        main.getShapeTypeFromUser.getInformationFromUser();
+        main.printArea.printAreaToScreen();
     }
 }

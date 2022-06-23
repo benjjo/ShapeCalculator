@@ -2,11 +2,11 @@ package shapeAreaCalculator;
 
 
 public class CalculateArea {
-    UserIn userInput;
     private String shapeType;
+    UserIn userInput;
 
-    public CalculateArea(){
-        userInput = new UserIn();
+    public CalculateArea(UserIn userIn){
+        userInput = userIn;
     }
 
     public void setShapeType(String shape){
@@ -17,8 +17,8 @@ public class CalculateArea {
         return this.shapeType;
     }
 
-    public double calculateAreaFromShapeType(){
-        return switch(this.getShapeType()){
+    public double callTheCorrectShapeAreaCalculator() {
+        return switch (ShapeManager.getShapeType()) {
             case "Square" -> this.squareArea();
             case "Rectangle" -> this.rectangleArea();
             case "Circle" -> this.circleArea();
@@ -28,20 +28,21 @@ public class CalculateArea {
 
     public double squareArea(){
         SquareArea squareArea = new SquareArea();
-        squareArea.setLength(userInput.getSquareEdgeFromUser());
+        squareArea.setLength(this.userInput.getSquareEdgeFromUser());
         return squareArea.calculatedArea();
     }
 
     public double rectangleArea(){
         RectangleArea rectangleArea = new RectangleArea();
-        rectangleArea.setWidth(userInput.getRectangleWidthFromUser());
-        rectangleArea.setLength((int) userInput.getRectangleLengthFromUser());
+        rectangleArea.setWidth(this.userInput.getRectangleWidthFromUser());
+        rectangleArea.setLength((int) this.userInput.getRectangleLengthFromUser());
         return rectangleArea.calculatedArea();
     }
 
     public double circleArea(){
         Circle circleArea = new Circle();
-        circleArea.setRadius(userInput.getRadiusFromUser());
+        circleArea.setRadius(this.userInput.getRadiusFromUser());
         return circleArea.calculatedArea();
     }
+
 }

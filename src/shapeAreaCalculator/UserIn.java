@@ -5,15 +5,15 @@ public class UserIn {
     private final Scanner userInput;
 
     public UserIn(){
-        userInput = new Scanner(System.in);
+        this.userInput = new Scanner(System.in);
     }
 
     public int getSelectionFromUser() {
         System.out.print("> ");
         try{return Integer.parseInt(this.userInput.nextLine());}
-        catch (NumberFormatException e) {
+        catch (RuntimeException e) {
             // We're trading one exception for another here. Thoughts?
-            throw new IllegalArgumentException("Please enter a number.");
+            throw new IllegalArgumentException("Please enter a valid number.");
         }
     }
 

@@ -1,6 +1,6 @@
 package shapeAreaCalculator;
 
-public class SquareArea implements StraightShape{
+public class SquareArea extends Shape implements StraightShape{
     protected int length;
 
     public void setLength(int sideLength){

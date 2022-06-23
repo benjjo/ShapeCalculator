@@ -1,6 +1,6 @@
 package shapeAreaCalculator;
 
-public class Circle {
+public class Circle extends Shape{
     private double rad;
 
     public void setRadius(double radLength){
