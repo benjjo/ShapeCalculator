@@ -8,4 +8,15 @@ import static org.junit.jupiter.api.Assertions.*;
 public class GetAndSetShapeTypeFromUserTest {
     GetAndSetShapeTypeFromUser getAndSetObj;
 
+    @Test
+    void setShapeTypeFromUser() {
+    }
+
+    @Test
+    void printOutTheOptions() {
+    }
+
+    @Test
+    void getInformationFromUser() {
+    }
 }

@@ -11,4 +11,8 @@ public class MenuTest {
     public MenuTest(){
         this.menu = new Menu();
     }
+
+    @Test
+    void printMenuToScreen() {
+    }
 }
